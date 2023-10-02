@@ -1,0 +1,59 @@
+POST https://localhost:7061/api/Login
+Content-Type: application/json
+
+{
+  "email": "mohan@test.com",
+  "password": "test123"
+}
+
+###
+POST https://localhost:7061/api/Login/Register
+Content-Type: application/json
+
+{
+  "email": "mohan@test.com",
+  "password": "test123",
+  "name": "Mohan Test"
+}
+
+###
+GET https://localhost:7061/api/Login
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJtb2hhbkB0ZXN0LmNvbSIsImV4cCI6MTY5MDMxOTA4NH0.IQNy8_IGDOD8YGDKhkGPKdXawweEsHQDVJeCWTaiXjE
+
+
+###
+POST https://localhost:7061/predict
+Content-Type: application/json
+
+{
+  "SentimentText": "This was a very bad steak"
+}
+
+###
+POST https://localhost:7061/api/tweets?skip=0&take=10
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJtb2hhbkB0ZXN0LmNvbSIsImV4cCI6MTY5MzEzNjI1N30.5WJ4l_-Oi81CoIpi0FjVyFSt9_nstdaHa7NRYeUn7po
+
+{
+  "hashTag": "#ai",
+  "sentiment": "positive"
+}
+
+###
+GET https://localhost:7061/api/tweets/filter?skip=0&take=10&sentiment=positive
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJtb2hhbkB0ZXN0LmNvbSIsImV4cCI6MTY5MzEzNjI1N30.5WJ4l_-Oi81CoIpi0FjVyFSt9_nstdaHa7NRYeUn7po
+
+###
+GET https://localhost:7061/api/keyword?take=10
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJtb2hhbkB0ZXN0LmNvbSIsImV4cCI6MTY5MTQwNTk5NX0.1xf0bGKq5HH4FgM10kbH5aYhy2DDG8JcB_vW1eVqe1g
+
+
+###
+GET https://localhost:7061/api/keyword/statistics?hashTag=ai
+Content-Type: application/json
+
+###
+GET https://localhost:3000/api/statistics?hashTag=ai
+Content-Type: application/json
